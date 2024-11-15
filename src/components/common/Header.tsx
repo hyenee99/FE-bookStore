@@ -6,26 +6,9 @@ import { Category } from "../../models/category.model";
 import { fetchCategory } from "../../api/category.api";
 import { useCategory } from "../../hooks/useCategory";
 
-// const CATEGORY = [
-//   {
-//     id: null,
-//     name: "전체"
-//   },
-//   {
-//     id: 0,
-//     name: "동화"
-//   },
-//   {
-//     id: 1,
-//     name: "소설"
-//   },
-//   {
-//     id: 2,
-//     name: "사회"
-//   }
-// ]
 function Header() {
   const {category} = useCategory();
+  console.log(category);
 
   return (
     <HeaderStyle>
@@ -38,9 +21,9 @@ function Header() {
         <ul>
           {
             category.map((item) =>  (
-              <li key={item.id}>
-                <Link to={item.id === null ? "/books" : `/books?category_id=${item.id}`}>
-                  {item.name}
+              <li key={item.category_id}>
+                <Link to={item.category_id === null ? "/books" : `/books?category_id=${item.category_id}`}>
+                  {item.category_name}
                 </Link>
               </li>
             ))
@@ -108,7 +91,7 @@ const HeaderStyle = styled.header `
         font-weight: 600;
         text-decoration: none;
         display: flex;
-        align-item:center;
+        align-items:center;
         line-height: 1;
 
         svg {
