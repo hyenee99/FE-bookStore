@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import Title from "../components/common/Title";
 import InputText from "../components/common/InputText";
 import Button from "../components/common/Button";
