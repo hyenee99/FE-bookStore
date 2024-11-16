@@ -8,7 +8,6 @@ import { useCategory } from "../../hooks/useCategory";
 
 function Header() {
   const {category} = useCategory();
-  console.log(category);
 
   return (
     <HeaderStyle>
