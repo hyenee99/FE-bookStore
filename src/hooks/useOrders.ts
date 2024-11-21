@@ -19,20 +19,20 @@ export const useOrders = () => {
       return;
     }
     
-    // fetchOrder(orderId).then((orderDetail) => {
-    //   setSelectedItemId(orderId);
-    //   setOrders(
-    //     orders.map((item) => {
-    //       if(item.id === orderId){
-    //         return {
-    //           ...item,
-    //           detail: orderDetail,
-    //         };
-    //       }
-    //       return item;
-    //     })
-    //   ); 
-    // });
+    fetchOrder(orderId).then((orderDetail) => {
+      setSelectedItemId(orderId);
+      setOrders(
+        orders.map((item) => {
+          if(item.id === orderId){
+            return {
+              ...item,
+              detail: orderDetail,
+            };
+          }
+          return item;
+        })
+      ); 
+    });
   }
   return {orders, selectedItemId, selectOrderItem};
 }
