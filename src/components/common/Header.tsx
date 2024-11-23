@@ -1,9 +1,6 @@
 import { styled } from "styled-components";
 import { FaSignInAlt, FaRegUser, FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { Category } from "../../models/category.model";
-import { fetchCategory } from "../../api/category.api";
 import { useCategory } from "../../hooks/useCategory";
 import { useAuthStore } from "../../store/authStore";
 import Dropdown from "./Dropdown";
