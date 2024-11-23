@@ -46,10 +46,6 @@ const ToastStyle = styled.div`
     }
   }
 
-  &.fade-in {
-    animation: fade-in 0.3s ease-in-out forwards;
-  }
-
   @keyframes fade-out {
     from {
       opacity: 1;
@@ -58,6 +54,15 @@ const ToastStyle = styled.div`
       opacity: 0;
     }
   }
+
+   &.fade-in {
+    animation: fade-in 0.3s ease-in-out forwards;
+  }
+
+   &.fade-out {
+    animation: fade-out 0.3s ease-in-out forwards;
+  }
+
 
   background-color: ${({ theme }) => theme.color.background};
   padding: 12px;
