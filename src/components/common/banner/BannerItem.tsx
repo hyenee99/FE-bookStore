@@ -23,6 +23,8 @@ function BannerItem({banner}:Props) {
   );
 }
 const BannerItemStyle = styled.div`
+  flex: 0 0 100%; 
+
   display: flex;
   align-items: center;
   justify-content: center;
