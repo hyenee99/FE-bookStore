@@ -1,29 +1,25 @@
-import { Banner as IBanner} from "@/models/banner.model";
+import { Banner as IBanner } from "@/models/banner.model";
 import styled from "styled-components";
 
 interface Props {
   banner: IBanner;
 }
 
-function BannerItem({banner}:Props) {
+function BannerItem({ banner }: Props) {
   return (
     <BannerItemStyle>
       <div className="img">
         <img src={banner.image} alt={banner.title} />
       </div>
       <div className="content">
-        <h2>
-          {banner.title}
-        </h2>
-        <p>
-          {banner.description}
-        </p>
+        <h2>{banner.title}</h2>
+        <p>{banner.description}</p>
       </div>
     </BannerItemStyle>
   );
 }
 const BannerItemStyle = styled.div`
-  flex: 0 0 100%; 
+  flex: 0 0 100%;
 
   display: flex;
   align-items: center;
@@ -32,10 +28,10 @@ const BannerItemStyle = styled.div`
   position: relative;
 
   .img {
-     img {
+    img {
       width: 100%;
       max-width: 100%;
-     }
+    }
   }
 
   .content {
@@ -44,7 +40,11 @@ const BannerItemStyle = styled.div`
     left: 0;
     width: 40%;
     height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255,1), rgba(255, 255, 255, 0));
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0)
+    );
 
     display: flex;
     flex-direction: column;
@@ -52,7 +52,7 @@ const BannerItemStyle = styled.div`
     justify-content: center;
 
     h2 {
-      font-size:2rem;
+      font-size: 2rem;
       font-weight: 700;
       margin-bottom: 1rem;
       color: ${(props) => props.theme.color.primary};
@@ -62,6 +62,22 @@ const BannerItemStyle = styled.div`
       font-size: 1.2rem;
       color: ${(props) => props.theme.color.text};
       margin: 0;
+    }
+  }
+
+  @media screen AND ${({ theme }) => theme.mediaQuery.mobile} {
+    .content {
+      width: 100%;
+      background: linear-gradient(to top, rgba(255, 255, 255,1), rgba(255, 255, 255, 0));
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+      }
+
+      p {
+        font-size: 0.75rem;
+      }
     }
   }
 `;
